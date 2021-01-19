@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float JumpForce = 1;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +18,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Nikitan lisäykset: AIjump == true
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
-        }
+        }     
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -29,7 +32,7 @@ public class PlayerController : MonoBehaviour
         }
     }
     //add upwards force to player
-    void Jump()
+    public void Jump()
     {
         rb.velocity = new Vector2(0,0);
         rb.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
