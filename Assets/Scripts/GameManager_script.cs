@@ -14,8 +14,8 @@ public class GameManager_script : MonoBehaviour
 
     void Start()
     {
-        player_script = GameObject.Find("Player").GetComponent<PlayerController>();
-        player = GameObject.Find("Player");
+        player_script = GameObject.Find("Lander").GetComponent<PlayerController>();
+        player = GameObject.Find("Lander");
         obstacleSpawner = GameObject.Find("ObstacleSpawner");
         gameMenu = true;
     }
