@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "obstacle")
+        if (collision.gameObject.tag == "Obstacle")
         {
             Die();
         }
@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     //add upwards force to player
     void Jump()
     {
+        rb.velocity = new Vector2(0,0);
         rb.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
     }
     //restart game, will change in the future
