@@ -26,6 +26,7 @@ public class ObstacleSpawner_script : MonoBehaviour
 
     void Start()
     {
+
         // Hyödyllistä tietää cameran korkeudeen, kun valitsee gapSpawnBoundaries
         print(Camera.main.orthographicSize);
         // obstacleRenderin avulla ohjelma rakentaa tolpat oikein riipumatta siitä, mitä spriteja käytetään
@@ -36,8 +37,12 @@ public class ObstacleSpawner_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameManager_script gameManager_script = GameObject.Find("GameManager").GetComponent<GameManager_script>();
         Timer = Timer - Time.deltaTime;
-        CreateObstacleColumn();
+        if (gameManager_script.gameMenu != true)
+        {
+            CreateObstacleColumn();
+        }
     }
 
     void CreateObstacleColumn()

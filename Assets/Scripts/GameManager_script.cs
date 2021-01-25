@@ -25,11 +25,10 @@ public class GameManager_script : MonoBehaviour
     {
         if (gameMenu == true)
         {
-            obstacleSpawner.gameObject.SetActive(false);
+
             AIjump();
         } else
         {
-            obstacleSpawner.gameObject.SetActive(true);
 
         }
 
